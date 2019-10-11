@@ -1,0 +1,573 @@
+I, [2019-10-10T06:57:35.395387 #1]  INFO -- : [50605eda-5f2d-41a4-b1fd-7aa5b0110d7e] Started GET "/" for 172.31.0.1 at 2019-10-10 06:57:35 +0000
+I, [2019-10-10T06:57:35.397839 #1]  INFO -- : [50605eda-5f2d-41a4-b1fd-7aa5b0110d7e] Processing by RoomsController#index as HTML
+I, [2019-10-10T06:57:35.411986 #1]  INFO -- : [50605eda-5f2d-41a4-b1fd-7aa5b0110d7e] Completed 401 Unauthorized in 13ms
+I, [2019-10-10T06:57:41.301721 #1]  INFO -- : [b5a6274d-3251-43b7-be48-7dce5ca1ca3f] Started GET "/" for 172.31.0.1 at 2019-10-10 06:57:41 +0000
+I, [2019-10-10T06:57:41.302721 #1]  INFO -- : [b5a6274d-3251-43b7-be48-7dce5ca1ca3f] Processing by RoomsController#index as HTML
+I, [2019-10-10T06:57:41.303872 #1]  INFO -- : [b5a6274d-3251-43b7-be48-7dce5ca1ca3f] Completed 401 Unauthorized in 1ms
+I, [2019-10-10T06:57:41.311685 #1]  INFO -- : [15a8ceaa-0e5a-42f1-9492-cb2353d5120a] Started GET "/users/sign_in" for 172.31.0.1 at 2019-10-10 06:57:41 +0000
+I, [2019-10-10T06:57:41.312713 #1]  INFO -- : [15a8ceaa-0e5a-42f1-9492-cb2353d5120a] Processing by Devise::SessionsController#new as HTML
+I, [2019-10-10T06:57:41.380254 #1]  INFO -- : [15a8ceaa-0e5a-42f1-9492-cb2353d5120a] Completed 500 Internal Server Error in 67ms (ActiveRecord: 16.9ms)
+F, [2019-10-10T06:57:41.382425 #1] FATAL -- : [15a8ceaa-0e5a-42f1-9492-cb2353d5120a]   
+F, [2019-10-10T06:57:41.382886 #1] FATAL -- : [15a8ceaa-0e5a-42f1-9492-cb2353d5120a] ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+LINE 8:                WHERE a.attrelid = '"users"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"users"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+F, [2019-10-10T06:57:41.383526 #1] FATAL -- : [15a8ceaa-0e5a-42f1-9492-cb2353d5120a]   
+F, [2019-10-10T06:57:41.384135 #1] FATAL -- : [15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:63:in `async_exec'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:63:in `block (2 levels) in query'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:62:in `block in query'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] /usr/local/lib/ruby/2.6.0/monitor.rb:230:in `mon_synchronize'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:61:in `query'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:757:in `column_definitions'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/schema_statements.rb:113:in `columns'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/schema_cache.rb:69:in `columns'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/schema_cache.rb:75:in `columns_hash'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:466:in `load_schema!'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/attributes.rb:234:in `load_schema!'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/attribute_decorators.rb:51:in `load_schema!'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:459:in `block in load_schema'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] /usr/local/lib/ruby/2.6.0/monitor.rb:230:in `mon_synchronize'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:456:in `load_schema'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:346:in `attribute_types'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/attribute_methods.rb:230:in `has_attribute?'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/inheritance.rb:55:in `new'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/devise-4.6.2/app/controllers/devise/sessions_controller.rb:11:in `new'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:194:in `process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/rendering.rb:30:in `process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:132:in `run_callbacks'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:41:in `process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/rescue.rb:22:in `process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:134:in `process'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:32:in `process'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:191:in `dispatch'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:252:in `dispatch'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:34:in `serve'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/mapper.rb:48:in `serve'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `each'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `serve'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:840:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/manager.rb:36:in `block in call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/manager.rb:34:in `catch'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/manager.rb:34:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/tempfile_reaper.rb:15:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:25:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:232:in `context'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:226:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:98:in `run_callbacks'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `block in call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/method_override.rb:22:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/static.rb:127:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/railties-5.2.3/lib/rails/engine.rb:524:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+[15a8ceaa-0e5a-42f1-9492-cb2353d5120a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+D, [2019-10-10T06:59:27.995975 #9] DEBUG -- :   [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+D, [2019-10-10T06:59:28.018675 #9] DEBUG -- :   [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T06:59:28.021660 #9] DEBUG -- :   [1m[35m (1.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+D, [2019-10-10T06:59:28.067014 #9] DEBUG -- :   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+I, [2019-10-10T06:59:28.073459 #9]  INFO -- : Migrating to DeviseCreateUsers (20190404100700)
+D, [2019-10-10T06:59:28.092232 #9] DEBUG -- :   [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T06:59:28.120649 #9] DEBUG -- :   [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T06:59:28.135898 #9] DEBUG -- :   [1m[35m (8.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+D, [2019-10-10T06:59:28.142197 #9] DEBUG -- :   [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+D, [2019-10-10T06:59:28.157904 #9] DEBUG -- :   [1m[35m (8.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+D, [2019-10-10T06:59:28.174363 #9] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (4.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404100700"]]
+D, [2019-10-10T06:59:28.177487 #9] DEBUG -- :   [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T06:59:28.177960 #9]  INFO -- : Migrating to CreateRooms (20190404102130)
+D, [2019-10-10T06:59:28.184943 #9] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T06:59:28.199397 #9] DEBUG -- :   [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T06:59:28.211464 #9] DEBUG -- :   [1m[35m (5.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_rooms_on_name" ON "rooms"  ("name")[0m
+D, [2019-10-10T06:59:28.215551 #9] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404102130"]]
+D, [2019-10-10T06:59:28.220311 #9] DEBUG -- :   [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T06:59:28.220877 #9]  INFO -- : Migrating to CreateRoomMessages (20190404102347)
+D, [2019-10-10T06:59:28.231798 #9] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T06:59:28.259191 #9] DEBUG -- :   [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "room_messages" ("id" bigserial primary key, "room_id" bigint, "user_id" bigint, "message" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_8ed44f6e34"
+FOREIGN KEY ("room_id")
+  REFERENCES "rooms" ("id")
+, CONSTRAINT "fk_rails_76bc7b974e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+D, [2019-10-10T06:59:28.265363 #9] DEBUG -- :   [1m[35m (3.6ms)[0m  [1m[35mCREATE  INDEX  "index_room_messages_on_room_id" ON "room_messages"  ("room_id")[0m
+D, [2019-10-10T06:59:28.273919 #9] DEBUG -- :   [1m[35m (4.9ms)[0m  [1m[35mCREATE  INDEX  "index_room_messages_on_user_id" ON "room_messages"  ("user_id")[0m
+D, [2019-10-10T06:59:28.282387 #9] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404102347"]]
+D, [2019-10-10T06:59:28.285640 #9] DEBUG -- :   [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T06:59:28.301437 #9] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2019-10-10T06:59:28.318039 #9] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T06:59:28.322650 #9] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "production"], ["created_at", "2019-10-10 06:59:28.318946"], ["updated_at", "2019-10-10 06:59:28.318946"]]
+D, [2019-10-10T06:59:28.325530 #9] DEBUG -- :   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T06:59:28.326744 #9] DEBUG -- :   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+I, [2019-10-10T07:04:05.825262 #1]  INFO -- : [b225aa58-4b1e-42a5-9150-2c5be546bc6d] Started GET "/users/sign_in" for 192.168.0.1 at 2019-10-10 07:04:05 +0000
+I, [2019-10-10T07:04:05.827119 #1]  INFO -- : [b225aa58-4b1e-42a5-9150-2c5be546bc6d] Processing by Devise::SessionsController#new as HTML
+I, [2019-10-10T07:04:05.923029 #1]  INFO -- : [b225aa58-4b1e-42a5-9150-2c5be546bc6d]   Rendering devise/sessions/new.html.erb within layouts/application
+I, [2019-10-10T07:04:05.963773 #1]  INFO -- : [b225aa58-4b1e-42a5-9150-2c5be546bc6d]   Rendered devise/shared/_links.html.erb (1.1ms)
+I, [2019-10-10T07:04:05.964320 #1]  INFO -- : [b225aa58-4b1e-42a5-9150-2c5be546bc6d]   Rendered devise/sessions/new.html.erb within layouts/application (40.9ms)
+I, [2019-10-10T07:04:05.978063 #1]  INFO -- : [b225aa58-4b1e-42a5-9150-2c5be546bc6d]   Rendered shared/_navigation_bar.html.erb (0.7ms)
+I, [2019-10-10T07:04:05.978792 #1]  INFO -- : [b225aa58-4b1e-42a5-9150-2c5be546bc6d] Completed 200 OK in 151ms (Views: 81.7ms | ActiveRecord: 19.5ms)
+I, [2019-10-10T07:04:20.137951 #1]  INFO -- : [ab9133d0-51c9-4227-bc3f-b69ba3484596] Started GET "/users/sign_up" for 192.168.0.1 at 2019-10-10 07:04:20 +0000
+I, [2019-10-10T07:04:20.139854 #1]  INFO -- : [ab9133d0-51c9-4227-bc3f-b69ba3484596] Processing by Devise::RegistrationsController#new as HTML
+I, [2019-10-10T07:04:20.172046 #1]  INFO -- : [ab9133d0-51c9-4227-bc3f-b69ba3484596]   Rendering devise/registrations/new.html.erb within layouts/application
+I, [2019-10-10T07:04:20.177038 #1]  INFO -- : [ab9133d0-51c9-4227-bc3f-b69ba3484596]   Rendered devise/shared/_links.html.erb (0.2ms)
+I, [2019-10-10T07:04:20.177577 #1]  INFO -- : [ab9133d0-51c9-4227-bc3f-b69ba3484596]   Rendered devise/registrations/new.html.erb within layouts/application (5.1ms)
+I, [2019-10-10T07:04:20.178408 #1]  INFO -- : [ab9133d0-51c9-4227-bc3f-b69ba3484596]   Rendered shared/_navigation_bar.html.erb (0.1ms)
+I, [2019-10-10T07:04:20.179010 #1]  INFO -- : [ab9133d0-51c9-4227-bc3f-b69ba3484596] Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+I, [2019-10-10T07:04:50.135705 #1]  INFO -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62] Started POST "/users" for 192.168.0.1 at 2019-10-10 07:04:50 +0000
+I, [2019-10-10T07:04:50.137857 #1]  INFO -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62] Processing by Devise::RegistrationsController#create as HTML
+I, [2019-10-10T07:04:50.139044 #1]  INFO -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"2UV+zHMAJlX5evQCwFJ9FLz2MLpjJ/v9P0D0AzTdnHnVP72wIq3h3pHk/wW3DLJLHQ3S/zLShJJ1hJS2+9duOg==", "user"=>{"email"=>"dhdong1510@gmail.com", "username"=>"dhdong", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+D, [2019-10-10T07:04:50.317975 #1] DEBUG -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T07:04:50.327427 #1] DEBUG -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62]   [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dhdong1510@gmail.com"], ["LIMIT", 1]]
+D, [2019-10-10T07:04:50.329173 #1] DEBUG -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62]   [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "dhdong"], ["LIMIT", 1]]
+D, [2019-10-10T07:04:50.333882 #1] DEBUG -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62]   [1m[36mUser Create (3.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "dhdong1510@gmail.com"], ["encrypted_password", "$2a$11$Kv6iFg669ry3uLj2Tsi8quPE4RV6WSg8jvkfjd1Qnu1hNikr6EW2C"], ["username", "dhdong"], ["created_at", "2019-10-10 07:04:50.329789"], ["updated_at", "2019-10-10 07:04:50.329789"]]
+D, [2019-10-10T07:04:50.335851 #1] DEBUG -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T07:04:50.371278 #1]  INFO -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62] Redirected to http://localhost:9000/
+I, [2019-10-10T07:04:50.371723 #1]  INFO -- : [6a4a6173-eaf6-4083-b906-974f0ee14f62] Completed 302 Found in 232ms (ActiveRecord: 6.7ms)
+I, [2019-10-10T07:04:50.376824 #1]  INFO -- : [22205740-dfbd-4674-8337-31993e6d7c35] Started GET "/" for 192.168.0.1 at 2019-10-10 07:04:50 +0000
+I, [2019-10-10T07:04:50.377743 #1]  INFO -- : [22205740-dfbd-4674-8337-31993e6d7c35] Processing by RoomsController#index as HTML
+D, [2019-10-10T07:04:50.382466 #1] DEBUG -- : [22205740-dfbd-4674-8337-31993e6d7c35]   [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:04:50.409960 #1]  INFO -- : [22205740-dfbd-4674-8337-31993e6d7c35]   Rendering rooms/index.html.erb within layouts/application
+D, [2019-10-10T07:04:50.421340 #1] DEBUG -- : [22205740-dfbd-4674-8337-31993e6d7c35]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+I, [2019-10-10T07:04:50.423490 #1]  INFO -- : [22205740-dfbd-4674-8337-31993e6d7c35]   Rendered rooms/_rooms.html.erb (3.4ms)
+I, [2019-10-10T07:04:50.424027 #1]  INFO -- : [22205740-dfbd-4674-8337-31993e6d7c35]   Rendered rooms/index.html.erb within layouts/application (13.6ms)
+I, [2019-10-10T07:04:50.426156 #1]  INFO -- : [22205740-dfbd-4674-8337-31993e6d7c35]   Rendered shared/_navigation_bar.html.erb (1.0ms)
+I, [2019-10-10T07:04:50.427133 #1]  INFO -- : [22205740-dfbd-4674-8337-31993e6d7c35] Completed 200 OK in 49ms (Views: 24.7ms | ActiveRecord: 3.7ms)
+I, [2019-10-10T07:04:53.893469 #1]  INFO -- : [2147d3f7-b24b-49e4-8cee-bfbb0d432918] Started GET "/rooms/new" for 192.168.0.1 at 2019-10-10 07:04:53 +0000
+I, [2019-10-10T07:04:53.894827 #1]  INFO -- : [2147d3f7-b24b-49e4-8cee-bfbb0d432918] Processing by RoomsController#new as HTML
+D, [2019-10-10T07:04:53.900796 #1] DEBUG -- : [2147d3f7-b24b-49e4-8cee-bfbb0d432918]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:04:54.042561 #1]  INFO -- : [2147d3f7-b24b-49e4-8cee-bfbb0d432918]   Rendering rooms/new.html.erb within layouts/application
+I, [2019-10-10T07:04:54.058751 #1]  INFO -- : [2147d3f7-b24b-49e4-8cee-bfbb0d432918]   Rendered rooms/_form.html.erb (2.9ms)
+I, [2019-10-10T07:04:54.059341 #1]  INFO -- : [2147d3f7-b24b-49e4-8cee-bfbb0d432918]   Rendered rooms/new.html.erb within layouts/application (16.3ms)
+I, [2019-10-10T07:04:54.060298 #1]  INFO -- : [2147d3f7-b24b-49e4-8cee-bfbb0d432918]   Rendered shared/_navigation_bar.html.erb (0.2ms)
+I, [2019-10-10T07:04:54.061474 #1]  INFO -- : [2147d3f7-b24b-49e4-8cee-bfbb0d432918] Completed 200 OK in 164ms (Views: 18.7ms | ActiveRecord: 2.5ms)
+I, [2019-10-10T07:04:58.882883 #1]  INFO -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf] Started POST "/rooms" for 192.168.0.1 at 2019-10-10 07:04:58 +0000
+I, [2019-10-10T07:04:58.884979 #1]  INFO -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf] Processing by RoomsController#create as HTML
+I, [2019-10-10T07:04:58.887033 #1]  INFO -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"TPHEBORlaFuqb3sSoHFBV01pm5M4POzvapqGg+XW3HhAiwd4tciv0MLxcBXXL44I7JJ51mnJk4AgXuY2KtwuOw==", "room"=>{"name"=>"dong test"}, "commit"=>"Save"}
+D, [2019-10-10T07:04:58.891680 #1] DEBUG -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2019-10-10T07:04:58.895226 #1] DEBUG -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T07:04:58.898287 #1] DEBUG -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf]   [1m[36mRoom Create (1.6ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "dong test"], ["created_at", "2019-10-10 07:04:58.896096"], ["updated_at", "2019-10-10 07:04:58.896096"]]
+D, [2019-10-10T07:04:58.900787 #1] DEBUG -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T07:04:58.901655 #1]  INFO -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf] Redirected to http://localhost:9000/rooms
+I, [2019-10-10T07:04:58.902242 #1]  INFO -- : [01f680b0-2d00-4b96-b597-4e6660af4aaf] Completed 302 Found in 15ms (ActiveRecord: 4.5ms)
+I, [2019-10-10T07:04:58.911622 #1]  INFO -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a] Started GET "/rooms" for 192.168.0.1 at 2019-10-10 07:04:58 +0000
+I, [2019-10-10T07:04:58.913941 #1]  INFO -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a] Processing by RoomsController#index as HTML
+D, [2019-10-10T07:04:58.917186 #1] DEBUG -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:04:58.919165 #1]  INFO -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a]   Rendering rooms/index.html.erb within layouts/application
+D, [2019-10-10T07:04:58.920832 #1] DEBUG -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+I, [2019-10-10T07:04:58.921886 #1]  INFO -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a]   Rendered rooms/_rooms.html.erb (2.0ms)
+I, [2019-10-10T07:04:58.922737 #1]  INFO -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a]   Rendered rooms/index.html.erb within layouts/application (2.9ms)
+I, [2019-10-10T07:04:58.923928 #1]  INFO -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a]   Rendered shared/_navigation_bar.html.erb (0.2ms)
+I, [2019-10-10T07:04:58.924833 #1]  INFO -- : [a95ccd70-4629-48f0-ae23-fc5c9441fc4a] Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 1.3ms)
+I, [2019-10-10T07:05:01.777225 #1]  INFO -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61] Started GET "/rooms/1" for 192.168.0.1 at 2019-10-10 07:05:01 +0000
+I, [2019-10-10T07:05:01.778464 #1]  INFO -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61] Processing by RoomsController#show as HTML
+I, [2019-10-10T07:05:01.779109 #1]  INFO -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   Parameters: {"id"=>"1"}
+D, [2019-10-10T07:05:01.782106 #1] DEBUG -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2019-10-10T07:05:01.784301 #1] DEBUG -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:05:01.808269 #1]  INFO -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   Rendering rooms/show.html.erb within layouts/application
+D, [2019-10-10T07:05:01.811480 #1] DEBUG -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+I, [2019-10-10T07:05:01.812624 #1]  INFO -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   Rendered rooms/_rooms.html.erb (2.2ms)
+D, [2019-10-10T07:05:01.815387 #1] DEBUG -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   [1m[36mRoomMessage Load (1.6ms)[0m  [1m[34mSELECT "room_messages".* FROM "room_messages" WHERE "room_messages"."room_id" = $1[0m  [["room_id", 1]]
+I, [2019-10-10T07:05:01.818249 #1]  INFO -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   Rendered rooms/show.html.erb within layouts/application (9.6ms)
+I, [2019-10-10T07:05:01.819630 #1]  INFO -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61]   Rendered shared/_navigation_bar.html.erb (0.2ms)
+I, [2019-10-10T07:05:01.820363 #1]  INFO -- : [8290e92a-251e-4a9c-9a65-206c7fac5c61] Completed 200 OK in 41ms (Views: 9.9ms | ActiveRecord: 5.3ms)
+I, [2019-10-10T07:05:01.915343 #1]  INFO -- : [cdc2d611-3c61-42a7-af79-83661a3bf67a] Started GET "/cable" for 192.168.0.1 at 2019-10-10 07:05:01 +0000
+I, [2019-10-10T07:05:02.090388 #1]  INFO -- : [cdc2d611-3c61-42a7-af79-83661a3bf67a] Started GET "/cable/" [WebSocket] for 192.168.0.1 at 2019-10-10 07:05:02 +0000
+I, [2019-10-10T07:05:02.090829 #1]  INFO -- : [cdc2d611-3c61-42a7-af79-83661a3bf67a] Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+D, [2019-10-10T07:05:02.133395 #1] DEBUG -- :   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:05:02.134602 #1]  INFO -- : Registered connection (Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Vc2VyLzE)
+D, [2019-10-10T07:05:02.220062 #1] DEBUG -- :   [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:05:02.253450 #1]  INFO -- : RoomChannel is transmitting the subscription confirmation
+I, [2019-10-10T07:05:02.263972 #1]  INFO -- : RoomChannel is streaming from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE
+I, [2019-10-10T07:05:05.482745 #1]  INFO -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119] Started POST "/room_messages" for 192.168.0.1 at 2019-10-10 07:05:05 +0000
+I, [2019-10-10T07:05:05.484346 #1]  INFO -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119] Processing by RoomMessagesController#create as JS
+I, [2019-10-10T07:05:05.485133 #1]  INFO -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119]   Parameters: {"utf8"=>"✓", "room_message"=>{"message"=>"hello ", "room_id"=>"1"}, "commit"=>"Send"}
+D, [2019-10-10T07:05:05.488120 #1] DEBUG -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2019-10-10T07:05:05.490906 #1] DEBUG -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119]   [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2019-10-10T07:05:05.492534 #1] DEBUG -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T07:05:05.497676 #1] DEBUG -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119]   [1m[36mRoomMessage Create (3.3ms)[0m  [1m[32mINSERT INTO "room_messages" ("room_id", "user_id", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["room_id", 1], ["user_id", 1], ["message", "hello "], ["created_at", "2019-10-10 07:05:05.493742"], ["updated_at", "2019-10-10 07:05:05.493742"]]
+D, [2019-10-10T07:05:05.503872 #1] DEBUG -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119]   [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T07:05:05.504993 #1] DEBUG -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119] [ActionCable] Broadcasting to room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE: #<RoomMessage id: 1, room_id: 1, user_id: 1, message: "hello ", created_at: "2019-10-10 07:05:05", updated_at: "2019-10-10 07:05:05">
+D, [2019-10-10T07:05:05.511222 #1] DEBUG -- : RoomChannel transmitting {"id"=>1, "room_id"=>1, "user_id"=>1, "message"=>"hello ", "created_at"=>"2019-10-10T07:05:05.493Z", "updated_at"=>"2019-10-10T07:05:05.493Z", "user_avatar_url"=>"https://gravatar.com/avatar/fe082174bc0f9e3365c1a4cf08f44cdf.png"} (via streamed from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE)
+I, [2019-10-10T07:05:05.535160 #1]  INFO -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119] No template found for RoomMessagesController#create, rendering head :no_content
+I, [2019-10-10T07:05:05.538802 #1]  INFO -- : [2c3242f2-b33a-4a2a-8f39-2c83c6170119] Completed 204 No Content in 53ms (ActiveRecord: 10.0ms)
+I, [2019-10-10T07:05:27.791888 #1]  INFO -- : [a6270db5-bc39-44aa-87d6-ee08de54792c] Started GET "/" for 192.168.0.1 at 2019-10-10 07:05:27 +0000
+I, [2019-10-10T07:05:27.795286 #1]  INFO -- : [a6270db5-bc39-44aa-87d6-ee08de54792c] Processing by RoomsController#index as HTML
+D, [2019-10-10T07:05:27.802195 #1] DEBUG -- : [a6270db5-bc39-44aa-87d6-ee08de54792c]   [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:05:27.806274 #1]  INFO -- : [a6270db5-bc39-44aa-87d6-ee08de54792c]   Rendering rooms/index.html.erb within layouts/application
+D, [2019-10-10T07:05:27.809056 #1] DEBUG -- : [a6270db5-bc39-44aa-87d6-ee08de54792c]   [1m[36mRoom Load (0.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+I, [2019-10-10T07:05:27.810458 #1]  INFO -- : [a6270db5-bc39-44aa-87d6-ee08de54792c]   Rendered rooms/_rooms.html.erb (2.6ms)
+I, [2019-10-10T07:05:27.810980 #1]  INFO -- : [a6270db5-bc39-44aa-87d6-ee08de54792c]   Rendered rooms/index.html.erb within layouts/application (3.5ms)
+I, [2019-10-10T07:05:27.813056 #1]  INFO -- : [a6270db5-bc39-44aa-87d6-ee08de54792c]   Rendered shared/_navigation_bar.html.erb (0.4ms)
+I, [2019-10-10T07:05:27.815309 #1]  INFO -- : [a6270db5-bc39-44aa-87d6-ee08de54792c] Completed 200 OK in 18ms (Views: 8.8ms | ActiveRecord: 2.7ms)
+I, [2019-10-10T07:05:42.511203 #1]  INFO -- : [316da23b-97cd-45ef-b5ce-e4dbc48a2274] Started GET "/" for 192.168.0.1 at 2019-10-10 07:05:42 +0000
+I, [2019-10-10T07:05:42.513667 #1]  INFO -- : [316da23b-97cd-45ef-b5ce-e4dbc48a2274] Processing by RoomsController#index as HTML
+I, [2019-10-10T07:05:42.516308 #1]  INFO -- : [316da23b-97cd-45ef-b5ce-e4dbc48a2274] Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+I, [2019-10-10T07:05:42.530319 #1]  INFO -- : [7a143272-dd84-4401-88d4-5ced47cde127] Started GET "/users/sign_in" for 192.168.0.1 at 2019-10-10 07:05:42 +0000
+I, [2019-10-10T07:05:42.532805 #1]  INFO -- : [7a143272-dd84-4401-88d4-5ced47cde127] Processing by Devise::SessionsController#new as HTML
+I, [2019-10-10T07:05:42.544709 #1]  INFO -- : [7a143272-dd84-4401-88d4-5ced47cde127]   Rendering devise/sessions/new.html.erb within layouts/application
+I, [2019-10-10T07:05:42.550247 #1]  INFO -- : [7a143272-dd84-4401-88d4-5ced47cde127]   Rendered devise/shared/_links.html.erb (0.3ms)
+I, [2019-10-10T07:05:42.550830 #1]  INFO -- : [7a143272-dd84-4401-88d4-5ced47cde127]   Rendered devise/sessions/new.html.erb within layouts/application (5.6ms)
+I, [2019-10-10T07:05:42.551768 #1]  INFO -- : [7a143272-dd84-4401-88d4-5ced47cde127]   Rendered shared/_navigation_bar.html.erb (0.2ms)
+I, [2019-10-10T07:05:42.552583 #1]  INFO -- : [7a143272-dd84-4401-88d4-5ced47cde127] Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.0ms)
+I, [2019-10-10T07:05:44.976357 #1]  INFO -- : [5a18b651-9ffe-4d9d-9854-483324030fdb] Started GET "/users/sign_up" for 192.168.0.1 at 2019-10-10 07:05:44 +0000
+I, [2019-10-10T07:05:45.036564 #1]  INFO -- : [5a18b651-9ffe-4d9d-9854-483324030fdb] Processing by Devise::RegistrationsController#new as HTML
+I, [2019-10-10T07:05:45.045396 #1]  INFO -- : [5a18b651-9ffe-4d9d-9854-483324030fdb]   Rendering devise/registrations/new.html.erb within layouts/application
+I, [2019-10-10T07:05:45.055001 #1]  INFO -- : [5a18b651-9ffe-4d9d-9854-483324030fdb]   Rendered devise/shared/_links.html.erb (0.3ms)
+I, [2019-10-10T07:05:45.057161 #1]  INFO -- : [5a18b651-9ffe-4d9d-9854-483324030fdb]   Rendered devise/registrations/new.html.erb within layouts/application (9.5ms)
+I, [2019-10-10T07:05:45.062119 #1]  INFO -- : [5a18b651-9ffe-4d9d-9854-483324030fdb]   Rendered shared/_navigation_bar.html.erb (0.4ms)
+I, [2019-10-10T07:05:45.063213 #1]  INFO -- : [5a18b651-9ffe-4d9d-9854-483324030fdb] Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+I, [2019-10-10T07:06:07.947883 #1]  INFO -- : [27b5e3da-4b0b-461a-966d-75494f7c149e] Started POST "/users" for 192.168.0.1 at 2019-10-10 07:06:07 +0000
+I, [2019-10-10T07:06:07.951737 #1]  INFO -- : [27b5e3da-4b0b-461a-966d-75494f7c149e] Processing by Devise::RegistrationsController#create as HTML
+I, [2019-10-10T07:06:07.952928 #1]  INFO -- : [27b5e3da-4b0b-461a-966d-75494f7c149e]   Parameters: {"utf8"=>"✓", "authenticity_token"=>"oG6rx9BI3z4+GJ6EsbNJevwvb34uQfIJiBfpxam1DSMX7KrzhqoHABF5cY4x9ZfaiFxqwPWRgsRimrJL0ElSlA==", "user"=>{"email"=>"dongd@jobready.com.au", "username"=>"hoangdong", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+D, [2019-10-10T07:06:08.074227 #1] DEBUG -- : [27b5e3da-4b0b-461a-966d-75494f7c149e]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T07:06:08.077706 #1] DEBUG -- : [27b5e3da-4b0b-461a-966d-75494f7c149e]   [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dongd@jobready.com.au"], ["LIMIT", 1]]
+D, [2019-10-10T07:06:08.080440 #1] DEBUG -- : [27b5e3da-4b0b-461a-966d-75494f7c149e]   [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "hoangdong"], ["LIMIT", 1]]
+D, [2019-10-10T07:06:08.082667 #1] DEBUG -- : [27b5e3da-4b0b-461a-966d-75494f7c149e]   [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "dongd@jobready.com.au"], ["encrypted_password", "$2a$11$XEYNsHOWmWWHls5eOsScHeJ5qjAJWRvJiyk2GzZo671HnAXos8Mvy"], ["username", "hoangdong"], ["created_at", "2019-10-10 07:06:08.081111"], ["updated_at", "2019-10-10 07:06:08.081111"]]
+D, [2019-10-10T07:06:08.085913 #1] DEBUG -- : [27b5e3da-4b0b-461a-966d-75494f7c149e]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T07:06:08.087565 #1]  INFO -- : [27b5e3da-4b0b-461a-966d-75494f7c149e] Redirected to http://localhost:9000/
+I, [2019-10-10T07:06:08.088283 #1]  INFO -- : [27b5e3da-4b0b-461a-966d-75494f7c149e] Completed 302 Found in 134ms (ActiveRecord: 3.5ms)
+I, [2019-10-10T07:06:08.094672 #1]  INFO -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6] Started GET "/" for 192.168.0.1 at 2019-10-10 07:06:08 +0000
+I, [2019-10-10T07:06:08.095601 #1]  INFO -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6] Processing by RoomsController#index as HTML
+D, [2019-10-10T07:06:08.098303 #1] DEBUG -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+I, [2019-10-10T07:06:08.101307 #1]  INFO -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6]   Rendering rooms/index.html.erb within layouts/application
+D, [2019-10-10T07:06:08.103316 #1] DEBUG -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6]   [1m[36mRoom Load (0.6ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+I, [2019-10-10T07:06:08.104137 #1]  INFO -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6]   Rendered rooms/_rooms.html.erb (1.9ms)
+I, [2019-10-10T07:06:08.104550 #1]  INFO -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6]   Rendered rooms/index.html.erb within layouts/application (2.5ms)
+I, [2019-10-10T07:06:08.105465 #1]  INFO -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6]   Rendered shared/_navigation_bar.html.erb (0.1ms)
+I, [2019-10-10T07:06:08.106060 #1]  INFO -- : [6fd60bff-b49a-4bef-a380-0af97a93c1f6] Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.9ms)
+I, [2019-10-10T07:06:10.953730 #1]  INFO -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572] Started GET "/rooms/1" for 192.168.0.1 at 2019-10-10 07:06:10 +0000
+I, [2019-10-10T07:06:10.955379 #1]  INFO -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572] Processing by RoomsController#show as HTML
+I, [2019-10-10T07:06:10.956069 #1]  INFO -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   Parameters: {"id"=>"1"}
+D, [2019-10-10T07:06:10.958780 #1] DEBUG -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+D, [2019-10-10T07:06:10.961255 #1] DEBUG -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:06:10.962980 #1]  INFO -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   Rendering rooms/show.html.erb within layouts/application
+D, [2019-10-10T07:06:10.964235 #1] DEBUG -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+I, [2019-10-10T07:06:10.965047 #1]  INFO -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   Rendered rooms/_rooms.html.erb (1.3ms)
+D, [2019-10-10T07:06:10.966115 #1] DEBUG -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   [1m[36mRoomMessage Load (0.4ms)[0m  [1m[34mSELECT "room_messages".* FROM "room_messages" WHERE "room_messages"."room_id" = $1[0m  [["room_id", 1]]
+D, [2019-10-10T07:06:10.968046 #1] DEBUG -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+I, [2019-10-10T07:06:10.970851 #1]  INFO -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   Rendered rooms/show.html.erb within layouts/application (7.3ms)
+I, [2019-10-10T07:06:10.972146 #1]  INFO -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572]   Rendered shared/_navigation_bar.html.erb (0.1ms)
+I, [2019-10-10T07:06:10.973162 #1]  INFO -- : [9a1dbb7d-c2d5-403b-a61b-0447e8546572] Completed 200 OK in 16ms (Views: 8.9ms | ActiveRecord: 1.7ms)
+I, [2019-10-10T07:06:11.046300 #1]  INFO -- : [c05f7681-a041-449a-96c8-026c98e6ae0c] Started GET "/cable" for 192.168.0.1 at 2019-10-10 07:06:11 +0000
+I, [2019-10-10T07:06:11.047428 #1]  INFO -- : [c05f7681-a041-449a-96c8-026c98e6ae0c] Started GET "/cable/" [WebSocket] for 192.168.0.1 at 2019-10-10 07:06:11 +0000
+I, [2019-10-10T07:06:11.048037 #1]  INFO -- : [c05f7681-a041-449a-96c8-026c98e6ae0c] Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+D, [2019-10-10T07:06:11.051387 #1] DEBUG -- :   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+I, [2019-10-10T07:06:11.054710 #1]  INFO -- : Registered connection (Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Vc2VyLzI)
+D, [2019-10-10T07:06:11.064945 #1] DEBUG -- :   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:06:11.066490 #1]  INFO -- : RoomChannel is transmitting the subscription confirmation
+I, [2019-10-10T07:06:11.071684 #1]  INFO -- : RoomChannel is streaming from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE
+I, [2019-10-10T07:06:16.379647 #1]  INFO -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2] Started POST "/room_messages" for 192.168.0.1 at 2019-10-10 07:06:16 +0000
+I, [2019-10-10T07:06:16.383382 #1]  INFO -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2] Processing by RoomMessagesController#create as JS
+I, [2019-10-10T07:06:16.384058 #1]  INFO -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2]   Parameters: {"utf8"=>"✓", "room_message"=>{"message"=>"hello", "room_id"=>"1"}, "commit"=>"Send"}
+D, [2019-10-10T07:06:16.387292 #1] DEBUG -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+D, [2019-10-10T07:06:16.388772 #1] DEBUG -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2]   [1m[36mRoom Load (0.3ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2019-10-10T07:06:16.389921 #1] DEBUG -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T07:06:16.391998 #1] DEBUG -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2]   [1m[36mRoomMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "room_messages" ("room_id", "user_id", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["room_id", 1], ["user_id", 2], ["message", "hello"], ["created_at", "2019-10-10 07:06:16.390962"], ["updated_at", "2019-10-10 07:06:16.390962"]]
+D, [2019-10-10T07:06:16.394425 #1] DEBUG -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2]   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T07:06:16.395107 #1] DEBUG -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2] [ActionCable] Broadcasting to room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE: #<RoomMessage id: 2, room_id: 1, user_id: 2, message: "hello", created_at: "2019-10-10 07:06:16", updated_at: "2019-10-10 07:06:16">
+I, [2019-10-10T07:06:16.396399 #1]  INFO -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2] No template found for RoomMessagesController#create, rendering head :no_content
+I, [2019-10-10T07:06:16.397807 #1]  INFO -- : [b3528e48-8f73-4954-a780-a0f5ac1fd5c2] Completed 204 No Content in 13ms (ActiveRecord: 2.5ms)
+D, [2019-10-10T07:06:16.398017 #1] DEBUG -- : RoomChannel transmitting {"id"=>2, "room_id"=>1, "user_id"=>2, "message"=>"hello", "created_at"=>"2019-10-10T07:06:16.390Z", "updated_at"=>"2019-10-10T07:06:16.390Z", "user_avatar_url"=>"https://gravatar.com/avatar/d05f851db193528f4eae92f7b4359e82.png"} (via streamed from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE)
+D, [2019-10-10T07:06:16.397545 #1] DEBUG -- : RoomChannel transmitting {"id"=>2, "room_id"=>1, "user_id"=>2, "message"=>"hello", "created_at"=>"2019-10-10T07:06:16.390Z", "updated_at"=>"2019-10-10T07:06:16.390Z", "user_avatar_url"=>"https://gravatar.com/avatar/d05f851db193528f4eae92f7b4359e82.png"} (via streamed from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE)
+I, [2019-10-10T07:06:43.785574 #1]  INFO -- : [bb877dd8-5302-4606-8811-098d0b3b50a0] Started POST "/room_messages" for 192.168.0.1 at 2019-10-10 07:06:43 +0000
+I, [2019-10-10T07:06:43.792735 #1]  INFO -- : [bb877dd8-5302-4606-8811-098d0b3b50a0] Processing by RoomMessagesController#create as JS
+I, [2019-10-10T07:06:43.793191 #1]  INFO -- : [bb877dd8-5302-4606-8811-098d0b3b50a0]   Parameters: {"utf8"=>"✓", "room_message"=>{"message"=>"ban khoe ko ?", "room_id"=>"1"}, "commit"=>"Send"}
+D, [2019-10-10T07:06:43.804095 #1] DEBUG -- : [bb877dd8-5302-4606-8811-098d0b3b50a0]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2019-10-10T07:06:43.807220 #1] DEBUG -- : [bb877dd8-5302-4606-8811-098d0b3b50a0]   [1m[36mRoom Load (0.4ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2019-10-10T07:06:43.809484 #1] DEBUG -- : [bb877dd8-5302-4606-8811-098d0b3b50a0]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T07:06:43.813985 #1] DEBUG -- : [bb877dd8-5302-4606-8811-098d0b3b50a0]   [1m[36mRoomMessage Create (1.9ms)[0m  [1m[32mINSERT INTO "room_messages" ("room_id", "user_id", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["room_id", 1], ["user_id", 1], ["message", "ban khoe ko ?"], ["created_at", "2019-10-10 07:06:43.810574"], ["updated_at", "2019-10-10 07:06:43.810574"]]
+D, [2019-10-10T07:06:43.816529 #1] DEBUG -- : [bb877dd8-5302-4606-8811-098d0b3b50a0]   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T07:06:43.818241 #1] DEBUG -- : [bb877dd8-5302-4606-8811-098d0b3b50a0] [ActionCable] Broadcasting to room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE: #<RoomMessage id: 3, room_id: 1, user_id: 1, message: "ban khoe ko ?", created_at: "2019-10-10 07:06:43", updated_at: "2019-10-10 07:06:43">
+I, [2019-10-10T07:06:43.821086 #1]  INFO -- : [bb877dd8-5302-4606-8811-098d0b3b50a0] No template found for RoomMessagesController#create, rendering head :no_content
+I, [2019-10-10T07:06:43.823418 #1]  INFO -- : [bb877dd8-5302-4606-8811-098d0b3b50a0] Completed 204 No Content in 30ms (ActiveRecord: 5.1ms)
+D, [2019-10-10T07:06:43.823898 #1] DEBUG -- : RoomChannel transmitting {"id"=>3, "room_id"=>1, "user_id"=>1, "message"=>"ban khoe ko ?", "created_at"=>"2019-10-10T07:06:43.810Z", "updated_at"=>"2019-10-10T07:06:43.810Z", "user_avatar_url"=>"https://gravatar.com/avatar/fe082174bc0f9e3365c1a4cf08f44cdf.png"} (via streamed from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE)
+D, [2019-10-10T07:06:43.822947 #1] DEBUG -- : RoomChannel transmitting {"id"=>3, "room_id"=>1, "user_id"=>1, "message"=>"ban khoe ko ?", "created_at"=>"2019-10-10T07:06:43.810Z", "updated_at"=>"2019-10-10T07:06:43.810Z", "user_avatar_url"=>"https://gravatar.com/avatar/fe082174bc0f9e3365c1a4cf08f44cdf.png"} (via streamed from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE)
+I, [2019-10-10T07:06:53.626158 #1]  INFO -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e] Started POST "/room_messages" for 192.168.0.1 at 2019-10-10 07:06:53 +0000
+I, [2019-10-10T07:06:53.628008 #1]  INFO -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e] Processing by RoomMessagesController#create as JS
+I, [2019-10-10T07:06:53.629113 #1]  INFO -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e]   Parameters: {"utf8"=>"✓", "room_message"=>{"message"=>"cam on ban minh van khoe", "room_id"=>"1"}, "commit"=>"Send"}
+D, [2019-10-10T07:06:53.632067 #1] DEBUG -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+D, [2019-10-10T07:06:53.633462 #1] DEBUG -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e]   [1m[36mRoom Load (0.5ms)[0m  [1m[34mSELECT  "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+D, [2019-10-10T07:06:53.635427 #1] DEBUG -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e]   [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T07:06:53.637092 #1] DEBUG -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e]   [1m[36mRoomMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "room_messages" ("room_id", "user_id", "message", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["room_id", 1], ["user_id", 2], ["message", "cam on ban minh van khoe"], ["created_at", "2019-10-10 07:06:53.635999"], ["updated_at", "2019-10-10 07:06:53.635999"]]
+D, [2019-10-10T07:06:53.640271 #1] DEBUG -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T07:06:53.640893 #1] DEBUG -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e] [ActionCable] Broadcasting to room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE: #<RoomMessage id: 4, room_id: 1, user_id: 2, message: "cam on ban minh van khoe", created_at: "2019-10-10 07:06:53", updated_at: "2019-10-10 07:06:53">
+I, [2019-10-10T07:06:53.644109 #1]  INFO -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e] No template found for RoomMessagesController#create, rendering head :no_content
+I, [2019-10-10T07:06:53.645162 #1]  INFO -- : [64205223-bbf3-409d-ac20-a7bc5c96f55e] Completed 204 No Content in 16ms (ActiveRecord: 3.6ms)
+D, [2019-10-10T07:06:53.645467 #1] DEBUG -- : RoomChannel transmitting {"id"=>4, "room_id"=>1, "user_id"=>2, "message"=>"cam on ban minh van khoe", "created_at"=>"2019-10-10T07:06:53.635Z", "updated_at"=>"2019-10-10T07:06:53.635Z", "user_avatar_url"=>"https://gravatar.com/avatar/d05f851db193528f4eae92f7b4359e82.png"} (via streamed from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE)
+D, [2019-10-10T07:06:53.644987 #1] DEBUG -- : RoomChannel transmitting {"id"=>4, "room_id"=>1, "user_id"=>2, "message"=>"cam on ban minh van khoe", "created_at"=>"2019-10-10T07:06:53.635Z", "updated_at"=>"2019-10-10T07:06:53.635Z", "user_avatar_url"=>"https://gravatar.com/avatar/d05f851db193528f4eae92f7b4359e82.png"} (via streamed from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE)
+I, [2019-10-10T07:08:03.240093 #1]  INFO -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6] Started GET "/" for 192.168.0.1 at 2019-10-10 07:08:03 +0000
+I, [2019-10-10T07:08:03.251416 #1]  INFO -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6] Processing by RoomsController#index as HTML
+D, [2019-10-10T07:08:03.254071 #1] DEBUG -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6]   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:08:03.267187 #1]  INFO -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6]   Rendering rooms/index.html.erb within layouts/application
+D, [2019-10-10T07:08:03.273816 #1] DEBUG -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6]   [1m[36mRoom Load (0.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+I, [2019-10-10T07:08:03.281046 #1]  INFO -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6]   Rendered rooms/_rooms.html.erb (9.8ms)
+I, [2019-10-10T07:08:03.281783 #1]  INFO -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6]   Rendered rooms/index.html.erb within layouts/application (14.0ms)
+I, [2019-10-10T07:08:03.286958 #1]  INFO -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6]   Rendered shared/_navigation_bar.html.erb (0.4ms)
+I, [2019-10-10T07:08:03.288697 #1]  INFO -- : [1c6dc6db-9fc0-4477-a524-aeb6250eade6] Completed 200 OK in 36ms (Views: 29.1ms | ActiveRecord: 1.1ms)
+I, [2019-10-10T07:08:03.348629 #1]  INFO -- : Finished "/cable/" [WebSocket] for 192.168.0.1 at 2019-10-10 07:08:03 +0000
+I, [2019-10-10T07:08:03.350309 #1]  INFO -- : RoomChannel stopped streaming from room:Z2lkOi8vcmFpbHMtY2hhdC10dXRvcmlhbC9Sb29tLzE
+I, [2019-10-10T07:08:04.611776 #1]  INFO -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b] Started GET "/" for 192.168.0.1 at 2019-10-10 07:08:04 +0000
+I, [2019-10-10T07:08:04.614304 #1]  INFO -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b] Processing by RoomsController#index as HTML
+D, [2019-10-10T07:08:04.618660 #1] DEBUG -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b]   [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T07:08:04.626421 #1]  INFO -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b]   Rendering rooms/index.html.erb within layouts/application
+D, [2019-10-10T07:08:04.628244 #1] DEBUG -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b]   [1m[36mRoom Load (0.8ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms"[0m
+I, [2019-10-10T07:08:04.629233 #1]  INFO -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b]   Rendered rooms/_rooms.html.erb (2.1ms)
+I, [2019-10-10T07:08:04.630222 #1]  INFO -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b]   Rendered rooms/index.html.erb within layouts/application (3.2ms)
+I, [2019-10-10T07:08:04.632686 #1]  INFO -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b]   Rendered shared/_navigation_bar.html.erb (0.2ms)
+I, [2019-10-10T07:08:04.633943 #1]  INFO -- : [6bc8a829-cb39-4ec0-bf79-d4572260a44b] Completed 200 OK in 19ms (Views: 7.1ms | ActiveRecord: 1.4ms)
+I, [2019-10-10T14:34:04.823074 #1]  INFO -- : [485151d7-9654-4629-83ae-ac143b73977a] Started GET "/" for 172.18.0.1 at 2019-10-10 14:34:04 +0000
+I, [2019-10-10T14:34:04.825510 #1]  INFO -- : [485151d7-9654-4629-83ae-ac143b73977a] Processing by RoomsController#index as HTML
+I, [2019-10-10T14:34:04.880313 #1]  INFO -- : [485151d7-9654-4629-83ae-ac143b73977a] Completed 500 Internal Server Error in 54ms (ActiveRecord: 20.8ms)
+F, [2019-10-10T14:34:04.885484 #1] FATAL -- : [485151d7-9654-4629-83ae-ac143b73977a]   
+F, [2019-10-10T14:34:04.887516 #1] FATAL -- : [485151d7-9654-4629-83ae-ac143b73977a] ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "users" does not exist
+LINE 8:                WHERE a.attrelid = '"users"'::regclass
+                                          ^
+:               SELECT a.attname, format_type(a.atttypid, a.atttypmod),
+                     pg_get_expr(d.adbin, d.adrelid), a.attnotnull, a.atttypid, a.atttypmod,
+                     c.collname, col_description(a.attrelid, a.attnum) AS comment
+                FROM pg_attribute a
+                LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+                LEFT JOIN pg_type t ON a.atttypid = t.oid
+                LEFT JOIN pg_collation c ON a.attcollation = c.oid AND a.attcollation <> t.typcollation
+               WHERE a.attrelid = '"users"'::regclass
+                 AND a.attnum > 0 AND NOT a.attisdropped
+               ORDER BY a.attnum
+):
+F, [2019-10-10T14:34:04.888023 #1] FATAL -- : [485151d7-9654-4629-83ae-ac143b73977a]   
+F, [2019-10-10T14:34:04.888664 #1] FATAL -- : [485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:63:in `async_exec'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:63:in `block (2 levels) in query'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:62:in `block in query'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+[485151d7-9654-4629-83ae-ac143b73977a] /usr/local/lib/ruby/2.6.0/monitor.rb:230:in `mon_synchronize'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql/database_statements.rb:61:in `query'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/postgresql_adapter.rb:757:in `column_definitions'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/abstract/schema_statements.rb:113:in `columns'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/schema_cache.rb:69:in `columns'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/connection_adapters/schema_cache.rb:75:in `columns_hash'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:466:in `load_schema!'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/attributes.rb:234:in `load_schema!'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/attribute_decorators.rb:51:in `load_schema!'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:459:in `block in load_schema'
+[485151d7-9654-4629-83ae-ac143b73977a] /usr/local/lib/ruby/2.6.0/monitor.rb:230:in `mon_synchronize'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:456:in `load_schema'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:346:in `attribute_types'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/model_schema.rb:370:in `type_for_attribute'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/table_metadata.rb:33:in `type'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/predicate_builder.rb:51:in `build'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/predicate_builder.rb:112:in `block in expand_from_hash'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/predicate_builder.rb:71:in `each'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/predicate_builder.rb:71:in `flat_map'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/predicate_builder.rb:71:in `expand_from_hash'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/predicate_builder.rb:21:in `build_from_hash'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/where_clause_factory.rb:19:in `build'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/query_methods.rb:591:in `where!'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/relation/query_methods.rb:584:in `where'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/querying.rb:12:in `where'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/orm_adapter-0.5.0/lib/orm_adapter/adapters/active_record.rb:17:in `get'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/devise-4.6.2/lib/devise/models/authenticatable.rb:238:in `serialize_from_session'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/devise-4.6.2/lib/devise.rb:485:in `block (2 levels) in configure_warden!'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/session_serializer.rb:35:in `fetch'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/proxy.rb:224:in `user'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/proxy.rb:334:in `_perform_authentication'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/proxy.rb:133:in `authenticate!'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/devise-4.6.2/lib/devise/controllers/helpers.rb:118:in `authenticate_user!'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:426:in `block in make_lambda'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:199:in `block in halting'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:513:in `block in invoke_before'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:513:in `each'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:513:in `invoke_before'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:131:in `run_callbacks'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/abstract_controller/callbacks.rb:41:in `process_action'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/rescue.rb:22:in `process_action'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `block in instrument'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/notifications.rb:168:in `instrument'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activerecord-5.2.3/lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/abstract_controller/base.rb:134:in `process'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionview-5.2.3/lib/action_view/rendering.rb:32:in `process'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:191:in `dispatch'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_controller/metal.rb:252:in `dispatch'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:34:in `serve'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:52:in `block in serve'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `each'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/journey/router.rb:35:in `serve'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/routing/route_set.rb:840:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/manager.rb:36:in `block in call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/manager.rb:34:in `catch'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/warden-1.2.8/lib/warden/manager.rb:34:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/tempfile_reaper.rb:15:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/etag.rb:25:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/conditional_get.rb:25:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/head.rb:12:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:232:in `context'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/session/abstract/id.rb:226:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/cookies.rb:670:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/callbacks.rb:98:in `run_callbacks'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `block in call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `block in tagged'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:28:in `tagged'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/tagged_logging.rb:71:in `tagged'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/railties-5.2.3/lib/rails/rack/logger.rb:26:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/method_override.rb:22:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/runtime.rb:22:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/activesupport-5.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/executor.rb:14:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/actionpack-5.2.3/lib/action_dispatch/middleware/static.rb:127:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/rack-2.0.7/lib/rack/sendfile.rb:111:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/railties-5.2.3/lib/rails/engine.rb:524:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/configuration.rb:227:in `call'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:660:in `handle_request'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:474:in `process_client'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/server.rb:334:in `block in run'
+[485151d7-9654-4629-83ae-ac143b73977a] vendor/bundle/ruby/2.6.0/gems/puma-3.12.1/lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+D, [2019-10-10T15:21:18.084494 #6] DEBUG -- :   [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+D, [2019-10-10T15:21:18.097388 #6] DEBUG -- :   [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T15:21:18.098658 #6] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+D, [2019-10-10T15:21:18.122833 #6] DEBUG -- :   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+I, [2019-10-10T15:21:18.125549 #6]  INFO -- : Migrating to DeviseCreateUsers (20190404100700)
+D, [2019-10-10T15:21:18.134119 #6] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T15:21:18.145951 #6] DEBUG -- :   [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T15:21:18.153792 #6] DEBUG -- :   [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+D, [2019-10-10T15:21:18.159743 #6] DEBUG -- :   [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+D, [2019-10-10T15:21:18.165574 #6] DEBUG -- :   [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+D, [2019-10-10T15:21:18.173809 #6] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404100700"]]
+D, [2019-10-10T15:21:18.175853 #6] DEBUG -- :   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T15:21:18.176360 #6]  INFO -- : Migrating to CreateRooms (20190404102130)
+D, [2019-10-10T15:21:18.182876 #6] DEBUG -- :   [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T15:21:18.194824 #6] DEBUG -- :   [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T15:21:18.205381 #6] DEBUG -- :   [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_rooms_on_name" ON "rooms"  ("name")[0m
+D, [2019-10-10T15:21:18.208288 #6] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404102130"]]
+D, [2019-10-10T15:21:18.210022 #6] DEBUG -- :   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T15:21:18.210478 #6]  INFO -- : Migrating to CreateRoomMessages (20190404102347)
+D, [2019-10-10T15:21:18.214147 #6] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T15:21:18.226762 #6] DEBUG -- :   [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "room_messages" ("id" bigserial primary key, "room_id" bigint, "user_id" bigint, "message" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_8ed44f6e34"
+FOREIGN KEY ("room_id")
+  REFERENCES "rooms" ("id")
+, CONSTRAINT "fk_rails_76bc7b974e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+D, [2019-10-10T15:21:18.231519 #6] DEBUG -- :   [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_room_messages_on_room_id" ON "room_messages"  ("room_id")[0m
+D, [2019-10-10T15:21:18.237148 #6] DEBUG -- :   [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_room_messages_on_user_id" ON "room_messages"  ("user_id")[0m
+D, [2019-10-10T15:21:18.240963 #6] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404102347"]]
+D, [2019-10-10T15:21:18.243077 #6] DEBUG -- :   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T15:21:18.255010 #6] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2019-10-10T15:21:18.264296 #6] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T15:21:18.267172 #6] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "production"], ["created_at", "2019-10-10 15:21:18.264955"], ["updated_at", "2019-10-10 15:21:18.264955"]]
+D, [2019-10-10T15:21:18.268739 #6] DEBUG -- :   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T15:21:18.269672 #6] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+I, [2019-10-10T15:21:35.075250 #1]  INFO -- : [fd4fc61d-999b-48b1-adb6-600c29f5831b] Started GET "/" for 172.18.0.1 at 2019-10-10 15:21:35 +0000
+I, [2019-10-10T15:21:35.084155 #1]  INFO -- : [fd4fc61d-999b-48b1-adb6-600c29f5831b] Processing by RoomsController#index as HTML
+D, [2019-10-10T15:21:35.121183 #1] DEBUG -- : [fd4fc61d-999b-48b1-adb6-600c29f5831b]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+I, [2019-10-10T15:21:35.125910 #1]  INFO -- : [fd4fc61d-999b-48b1-adb6-600c29f5831b] Completed 401 Unauthorized in 41ms (ActiveRecord: 7.3ms)
+I, [2019-10-10T15:21:35.176432 #1]  INFO -- : [bd5165d1-06fc-46b2-ab79-17a7688dbb2f] Started GET "/users/sign_in" for 172.18.0.1 at 2019-10-10 15:21:35 +0000
+I, [2019-10-10T15:21:35.180996 #1]  INFO -- : [bd5165d1-06fc-46b2-ab79-17a7688dbb2f] Processing by Devise::SessionsController#new as HTML
+I, [2019-10-10T15:21:35.228529 #1]  INFO -- : [bd5165d1-06fc-46b2-ab79-17a7688dbb2f]   Rendering devise/sessions/new.html.erb within layouts/application
+I, [2019-10-10T15:21:35.248960 #1]  INFO -- : [bd5165d1-06fc-46b2-ab79-17a7688dbb2f]   Rendered devise/shared/_links.html.erb (1.3ms)
+I, [2019-10-10T15:21:35.249413 #1]  INFO -- : [bd5165d1-06fc-46b2-ab79-17a7688dbb2f]   Rendered devise/sessions/new.html.erb within layouts/application (20.5ms)
+I, [2019-10-10T15:21:35.263787 #1]  INFO -- : [bd5165d1-06fc-46b2-ab79-17a7688dbb2f]   Rendered shared/_navigation_bar.html.erb (0.6ms)
+I, [2019-10-10T15:21:35.264471 #1]  INFO -- : [bd5165d1-06fc-46b2-ab79-17a7688dbb2f] Completed 200 OK in 83ms (Views: 64.5ms | ActiveRecord: 0.6ms)
+D, [2019-10-10T16:45:13.509617 #6] DEBUG -- :   [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+D, [2019-10-10T16:45:13.522916 #6] DEBUG -- :   [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T16:45:13.524099 #6] DEBUG -- :   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+D, [2019-10-10T16:45:13.560040 #6] DEBUG -- :   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+I, [2019-10-10T16:45:13.564085 #6]  INFO -- : Migrating to DeviseCreateUsers (20190404100700)
+D, [2019-10-10T16:45:13.572136 #6] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T16:45:13.581941 #6] DEBUG -- :   [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "username" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T16:45:13.586559 #6] DEBUG -- :   [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+D, [2019-10-10T16:45:13.592815 #6] DEBUG -- :   [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+D, [2019-10-10T16:45:13.597124 #6] DEBUG -- :   [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+D, [2019-10-10T16:45:13.602876 #6] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404100700"]]
+D, [2019-10-10T16:45:13.605491 #6] DEBUG -- :   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T16:45:13.605990 #6]  INFO -- : Migrating to CreateRooms (20190404102130)
+D, [2019-10-10T16:45:13.610503 #6] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T16:45:13.620414 #6] DEBUG -- :   [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "rooms" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+D, [2019-10-10T16:45:13.629168 #6] DEBUG -- :   [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_rooms_on_name" ON "rooms"  ("name")[0m
+D, [2019-10-10T16:45:13.632101 #6] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404102130"]]
+D, [2019-10-10T16:45:13.634269 #6] DEBUG -- :   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+I, [2019-10-10T16:45:13.634832 #6]  INFO -- : Migrating to CreateRoomMessages (20190404102347)
+D, [2019-10-10T16:45:13.639614 #6] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T16:45:13.652068 #6] DEBUG -- :   [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "room_messages" ("id" bigserial primary key, "room_id" bigint, "user_id" bigint, "message" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_8ed44f6e34"
+FOREIGN KEY ("room_id")
+  REFERENCES "rooms" ("id")
+, CONSTRAINT "fk_rails_76bc7b974e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+D, [2019-10-10T16:45:13.656605 #6] DEBUG -- :   [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_room_messages_on_room_id" ON "room_messages"  ("room_id")[0m
+D, [2019-10-10T16:45:13.660785 #6] DEBUG -- :   [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_room_messages_on_user_id" ON "room_messages"  ("user_id")[0m
+D, [2019-10-10T16:45:13.666219 #6] DEBUG -- :   [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190404102347"]]
+D, [2019-10-10T16:45:13.668179 #6] DEBUG -- :   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T16:45:13.678680 #6] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+D, [2019-10-10T16:45:13.689281 #6] DEBUG -- :   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+D, [2019-10-10T16:45:13.692961 #6] DEBUG -- :   [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "production"], ["created_at", "2019-10-10 16:45:13.690651"], ["updated_at", "2019-10-10 16:45:13.690651"]]
+D, [2019-10-10T16:45:13.694736 #6] DEBUG -- :   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+D, [2019-10-10T16:45:13.695574 #6] DEBUG -- :   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
